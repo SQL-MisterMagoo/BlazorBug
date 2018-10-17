@@ -4,4 +4,16 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<h1>Key: @KeyPressed</h1>
+<input id="bug" type="button" onkeypress="@OnKeyPress" value="Please click here and try pressing keys" />
+
+@functions {
+
+  string KeyPressed;
+
+  void OnKeyPress(UIKeyboardEventArgs args)
+  {
+      KeyPressed = args.Code;
+  }
+
+}
